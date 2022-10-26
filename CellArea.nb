@@ -1,0 +1,76 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2238,         68]
+NotebookOptionsPosition[      1672,         50]
+NotebookOutlinePosition[      2067,         66]
+CellTagsIndexPosition[      2024,         63]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"rawData", " ", "=", " ", 
+  RowBox[{"Import", "[", "\"\<Segmented 2/3.json\>\"", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.8757842169051733`*^9, 3.875784229077881*^9}, {
+  3.875784261463718*^9, 3.875784311235835*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"1ca21a77-899b-4f73-ae62-897547833e44"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Import", "nffil", 
+   "\"File \\!\\(\\*RowBox[{\\\"\\\\\\\"Segmented 2/3.json\\\\\\\"\\\"}]\\) \
+not found during \\!\\(\\*RowBox[{\\\"Import\\\"}]\\).\"", 2, 6, 2, 
+   20043755370744519096, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.875784307003792*^9, 3.875784311749784*^9}},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"48252f0a-13a5-4c39-8134-a9f9ba231f18"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{{3.8757842815630913`*^9, 3.875784311756736*^9}},
+ CellLabel->"Out[6]=",ExpressionUUID->"db96333a-ecce-4225-8d18-3a3db1c34246"]
+}, Open  ]]
+},
+WindowSize->{808, 666},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"12.2 for Mac OS X x86 (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2e7e81c7-93b7-476f-8b39-b34ea6c4533a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 447, 9, 52, "Input",ExpressionUUID->"1ca21a77-899b-4f73-ae62-897547833e44"],
+Cell[1030, 33, 443, 10, 24, "Message",ExpressionUUID->"48252f0a-13a5-4c39-8134-a9f9ba231f18"],
+Cell[1476, 45, 180, 2, 57, "Output",ExpressionUUID->"db96333a-ecce-4225-8d18-3a3db1c34246"]
+}, Open  ]]
+}
+]
+*)
+
