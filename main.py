@@ -3,7 +3,7 @@
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
-import meshpy as mp
+from meshpy.triangle import MeshInfo, build
 import json
 import sys
 
@@ -13,15 +13,45 @@ def file_analysis(path):
     return data['shapes']
 
 
+def mesh_partition(pts):
+    mesh_info = MeshInfo()
+    mesh_info.set_points(pts)
+    facets = [[i, i+1] for i in range(len( pts))]+ [[len(pts)-1,0]]
+    mesh_info.set_facets(facets)
+    mesh = build(mesh_info)
+    return mesh
+
+
 def cell_area(pts):
     sys.path.append('/Users/natalliazzz/Downloads/BSU MMF/2coursepaper')
     import volume
-    print(volume.area_of_triangle(pts[0], pts[1], pts[2]))
+    area = 0;
+    for p in pts:
+        area += volume.area_of_triangle(p[0], p[1], p[2])
+    return area
 
+
+def mesh_to_points(m):
+    pts = []
+    for i in range(len(m.elements)):
+        pts += [[m.points[m.elements[i][0]],m.points[m.elements[i][1]],m.points[m.elements[i][2]]]]
+    return pts
+
+
+def print_areas(data):
+    for i in data:
+        mesh = mesh_partition(i['points'])
+        pts = mesh_to_points(mesh)
+        print(i["label"],cell_area(pts))
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    file_analysis("Segmented 2/3.json")
-    cell_area([[1,2], [3,3],[2,1]])
+    data = file_analysis("Segmented 2/3.json")
+    # points = data[0]['points']
+    # mesh = mesh_partition(points)
+    # pts = mesh_to_points(mesh)
+    # print(cell_area(pts))
+    print_areas(data)
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
