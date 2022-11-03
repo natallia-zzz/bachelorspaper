@@ -7,6 +7,7 @@ from meshpy.triangle import MeshInfo, build
 import json
 import sys
 
+
 def file_analysis(path):
     f = open(path)
     data = json.load(f)
@@ -46,11 +47,14 @@ def print_areas(data):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    data = file_analysis("Segmented 2/3.json")
-    # points = data[0]['points']
-    # mesh = mesh_partition(points)
-    # pts = mesh_to_points(mesh)
-    # print(cell_area(pts))
+    data = file_analysis("Segmented 2/pepe3 10mcl - Aocul - 20Xspec.json")
+    points = data[5]['points']
+    mesh = mesh_partition(points)
+    meshFile = {'points': [i for i in mesh.points], 'elements': [i for i in mesh.elements]}
+    with open('resultpepe3.json', 'w') as fp:
+        json.dump(meshFile, fp)
+    pts = mesh_to_points(mesh)
+    print(cell_area(pts))
     print_areas(data)
 
 
